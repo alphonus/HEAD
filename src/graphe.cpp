@@ -46,7 +46,7 @@ void Graph::loadGraph(){
 					tConnect[i][j]=0;
 			}
 
-			//printf("Sommets ajoutes: %d\n", nbSommets);
+			printf("Sommets ajoutes: %d\n", nbSommets);
 		}
 
 		if(*tok=='e'){ // lecture d'une arrete
@@ -54,13 +54,16 @@ void Graph::loadGraph(){
 			int v1=atoi(tok);
 			tok=infile.getNextToken();
 			int v2=atoi(tok);
+			printf("v1 %d\n", v1);
+			printf("v2 %d\n", v2);
+	
 			tConnect[v1-1][v2-1]=1;
 			tConnect[v2-1][v1-1]=1;
 			nbArretesAjoutee++;
 		}}
 	}
 
-	//printf("Arretes ajoutees: %d / %d\n",nbArretesAjoutee ,nbArretes);
+	printf("Arretes ajoutees: %d / %d\n",nbArretesAjoutee ,nbArretes);
 
 	infile.close();
 

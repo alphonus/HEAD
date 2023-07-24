@@ -3,11 +3,12 @@ MAKEFILE      = Makefile
 ####### Compiler, tools and options
 
 CXX           = g++
-CXXFLAGS      = -pipe -fopenmp -O2 -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+CXXFLAGS      = -DDEBUG -g -pipe -fopenmp -O2 -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 DEL_FILE      = rm -f
 LINK          = g++
 LFLAGS        = -Wl,-O1
-LIBS          = $(SUBLIBS) /usr/lib/x86_64-linux-gnu/libgomp.so.1 -lpthread
+LIBS          += $(SUBLIBS) -lpthread
+#/nix/store/1pay13wh46w3kci17n3l35hay9ni02w3-libgccjit-11.3.0/lib/libgomp.so.1
 
 ####### Output directory
 
